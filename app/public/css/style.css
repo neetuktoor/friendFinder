@@ -86,3 +86,8 @@ hr {
 h4{
 	color: #FFD700;
 }
+
+h5 {
+	font-size: 18px;
+	color: gray;
+}

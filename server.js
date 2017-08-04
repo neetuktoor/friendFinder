@@ -7,6 +7,7 @@ var path = require ("path");
 var app = express();
 var PORT = process.env.PORT || 8080;
 
+//make the CSS folder public
 app.use(express.static(path.join(__dirname, "./app/public")));
 
 //set up to handle data parsing

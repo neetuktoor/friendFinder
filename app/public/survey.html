@@ -23,7 +23,7 @@
         <div class="nav-wrapper">
         <div class="brand-logo">FriendFinder  <i class="material-icons">group_add</i></div>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="https://github.com/neetuktoor/friendFinder/blob/master/app/data/friends.js">API Friends List</a></li>
+            <li><a href="/api/friends">API Friends List</a></li>
             <li><a href="https://github.com/neetuktoor/friendFinder">GitHub Repo</a></li>
           </ul>
         </div>
@@ -33,9 +33,9 @@
 <div class="container">
   <h4> Survey Questions </h4>
   <hr>
-  <p> About You </p>
       <div class="row">
         <div class="col s12 z-depth-5">
+        <p> About You </p>
           <div id="surveyQuestions">
           
                   <div class="input-field col s12">
@@ -53,8 +53,8 @@
 
                 <div class="input-field col s12">
                   <p>Question 1</p>
-                  <h5>You find it difficult to introduce yourself to other people</h5>
-                  <select id="q1">
+                  <h5>You find it difficult to introduce yourself to other people.</h5>
+                  <select class ="selectChosen" id="q1">
                     <option value="" disabled selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -67,7 +67,7 @@
                 <div class="input-field col s12">
                   <p>Question 2</p>
                   <h5>You often get so lost in thoughts that you ignore or forget your surroundings.</h5>
-                  <select id="q2">
+                  <select class ="selectChosen" id="q2">
                     <option value="" disabled selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -80,7 +80,7 @@
                 <div class="input-field col s12">
                   <p>Question 3</p>
                   <h5>You try to respond to your e-mails as soon as possible and cannot stand a messy inbox.</h5>
-                  <select id="q3">
+                  <select class ="selectChosen" id="q3">
                     <option value="" disabled selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -93,7 +93,7 @@
                 <div class="input-field col s12">
                   <p>Question 4</p>
                   <h5>You find it easy to stay relaxed and focused even when there is some pressure.</h5>
-                  <select id="q4">
+                  <select class ="selectChosen" id="q4">
                     <option value="" disabled selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -106,7 +106,7 @@
                 <div class="input-field col s12">
                   <p>Question 5</p>
                   <h5>Keeping your options open is more important than having a to-do list.</h5>
-                  <select id="q5">
+                  <select class ="selectChosen" id="q5">
                     <option value="" disabled selected>Select an Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
@@ -119,7 +119,7 @@
                  <div class="input-field col s12">
                     <p>Question 6</p>
                     <h5>You are usually highly motivated and energetic.</h5>
-                    <select id="q6">
+                    <select class ="selectChosen" id="q6">
                       <option value="" disabled selected>Select an Option</option>
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
@@ -132,7 +132,7 @@
                 <div class="input-field col s12">
                     <p>Question 7</p>
                     <h5>People can rarely upset you.</h5>
-                    <select id="q7">
+                    <select class ="selectChosen" id="q7">
                       <option value="" disabled selected>Select an Option</option>
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
@@ -145,7 +145,7 @@
                 <div class="input-field col s12">
                     <p>Question 8</p>
                     <h5>Your travel plans are usually well thought out.</h5>
-                    <select id="q8">
+                    <select class ="selectChosen" id="q8">
                       <option value="" disabled selected>Select an Option</option>
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
@@ -158,7 +158,7 @@
                 <div class="input-field col s12">
                     <p>Question 9</p>
                     <h5>You do not usually initiate conversations.</h5>
-                    <select id="q9">
+                    <select class ="selectChosen" id="q9">
                       <option value="" disabled selected>Select an Option</option>
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
@@ -171,7 +171,7 @@
                 <div class="input-field col s12">
                     <p>Question 10</p>
                     <h5>You rarely do something just out of sheer curiosity.</h5>
-                    <select id="q10">
+                    <select class ="selectChosen" id="q10">
                       <option value="" disabled selected>Select an Option</option>
                       <option value="1">1 (Strongly Disagree)</option>
                       <option value="2">2</option>
@@ -196,17 +196,16 @@
             </div>
         </footer>
 
-<!-- Modal Structure -->
+<!-- Modal popup Structure -->
   <div id="modal1" class="modal">
     <div class="modal-content">
       <h3>Best Match</h3>
       <hr>
-      <h5 id="surveyMatch"></h5>
-       <p id="imageHolder"></p>
+      <h5 id="#surveyMatch"></h5>
+       <p id="#imageHolder"></p>
     </div>
     <div class="modal-footer">
-      <button class="modal-action modal-close waves-effect waves-green btn-flat">Close</a>
-    </button>
+      <button class="modal-action modal-close waves-effect waves-green btn-flat">Close</a></button>
   </div>
 
 <!-- materialize select menu -->        
@@ -220,45 +219,76 @@
 
 // <!--grab form elements-->
 
-   $("#submitButton").on("click", function(event) {
-      event.preventDefault();
+    $("#submitButton").on("click", function(){
 
-      var newSurvey = {
-        name: $("#name").val().trim(),
-        photo: $("#photo").val().trim(),
-        answers: [
-          $("#q1").val().trim(),
-          $("#q2").val().trim(),
-          $("#q3").val().trim(),
-          $("#q2").val().trim(),
-          $("#q3").val().trim(),
-          $("#q4").val().trim(),
-          $("#q5").val().trim(),
-          $("#q6").val().trim(),
-          $("#q7").val().trim(),
-          $("#q8").val().trim(),
-          $("#q9").val().trim(),
-          $("#q10").val().trim()
-          ]
-      };
-        $.post("/api/friends", newSurvey)
-          .done(function(data) {
+      // validate the form
+      function validateForm() {
+      var isValid = true;
+      $('.validate').each(function() {
+        if ( $(this).val() === '' )
+            isValid = false;
+      });
+
+      $('selectChosen').each(function() {
+
+        if( $(this).val() === "")
+          isValid = false
+      })
+      return isValid;
+    }
+
+    // If all required fields are filled
+    if (validateForm() == true)
+    {
+      // Create an object for the user's survey data
+        var newSurvey = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            answers: [
+              $("#q1").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q2").val(),
+              $("#q3").val(),
+              $("#q4").val(),
+              $("#q5").val(),
+              $("#q6").val(),
+              $("#q7").val(),
+              $("#q8").val(),
+              $("#q9").val(),
+              $("#q10").val()
+              ]
+          };
+
+
+        // Grab the URL
+        var currentURL = window.location.origin;
+
+        // AJAX post  
+        $.post(currentURL + "/api/friends", newSurvey, function(data){
+
+          // display best match for name and photo.
+          $("#surveyMatch").text(data.name);
+          $("#imageHolder").attr("src", data.photo);
+
+          // Show the modal with the best match 
+          $('.modal').modal("open");
+
+        });
+    }
+    else
+    {
+      alert("Por favor, fill out all fields before submitting the survey!");
+    }
       
-            $("surveyMatch").html(data.nameMatch);
-            $("#imageHolder").attr("src", data.photoMatch);
-
-            $('#modal1').modal("open");
-          });
+      return false;
     });
 
-      // console.log(newSurvey);
   </script>
 
 <!-- materialize select menu javascript -->  
   <script type="text/javascript">
     $(document).ready(function() {
-
-      // $('select').material_select();
       $(".modal").modal({
         dismissible: false, // Modal can be dismissed by clicking outside of the modal
         opacity: .5, // Opacity of modal background
