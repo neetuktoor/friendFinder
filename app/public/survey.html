@@ -215,9 +215,25 @@
     });
   </script>
 
-  <script type="text/javascript">
 
-// <!--grab form elements-->
+
+ <!-- materialize select menu javascript -->  
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $(".modal").modal({
+        dismissible: false, // Modal can be dismissed by clicking outside of the modal
+        opacity: .5, // Opacity of modal background
+        inDuration: 300, // Transition in duration
+        outDuration: 200, // Transition out duration
+        startingTop: '4%', // Starting top style attribute
+        endingTop: '10%' // Ending top style attribute
+      });
+    });
+  </script>
+
+
+ <!--grab form elements-->
+  <script type="text/javascript">
 
     $("#submitButton").on("click", function(){
 
@@ -241,7 +257,7 @@
     if (validateForm() == true)
     {
       // Create an object for the user's survey data
-        var newSurvey = {
+        var userData = {
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
             answers: [
@@ -260,12 +276,11 @@
               ]
           };
 
-
         // Grab the URL
         var currentURL = window.location.origin;
 
         // AJAX post  
-        $.post(currentURL + "/api/friends", newSurvey, function(data){
+        $.post(currentURL + "/api/friends", userData, function(data){
 
           // display best match for name and photo.
           $("#surveyMatch").text(data.name);
@@ -286,19 +301,6 @@
 
   </script>
 
-<!-- materialize select menu javascript -->  
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(".modal").modal({
-        dismissible: false, // Modal can be dismissed by clicking outside of the modal
-        opacity: .5, // Opacity of modal background
-        inDuration: 300, // Transition in duration
-        outDuration: 200, // Transition out duration
-        startingTop: '4%', // Starting top style attribute
-        endingTop: '10%' // Ending top style attribute
-      });
-    });
-  </script>
 
 
     </body>

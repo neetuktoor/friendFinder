@@ -1,6 +1,6 @@
 // Dependencides
 var path = require ("path");
-var friendsData= require("../data/friends");
+var friendsData= require("../data/friends.js");
 
 // export routes
 module.exports = function(app) {
@@ -28,15 +28,15 @@ module.exports = function(app) {
       	totalDifference = 0
       	
       	for(var j = 0; j < friendsData[i].scores[j]; j++){
-        totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friends[i].scores[j]));
+        totalDifference += Math.abs(parseInt(userScores[j]) - parseInt(friendsdata[i].scores[j]));
 	        if(totalDifference <= bestMatch.friendDifference){
-	          bestMatch.name = friends[i].name;
-	          bestMatch.photo = friends[i].photo;
+	          bestMatch.name = friendsData[i].name;
+	          bestMatch.photo = friendsData[i].photo;
 	          bestMatch.friendDifference = totalDifference;        }
 	      	}
    		}
-    	friendsData.push(req.body);
-        res.json(friendsdata);
+    	friendsData.push(userData);
+        res.json(bestMatch);
     });
 }
 
