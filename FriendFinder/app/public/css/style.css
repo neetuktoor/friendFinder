@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css?family=Bowlby+One+SC|Righteous');
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+#logo{
+width:200px;
+height:200px;
+padding-bottom: 10px;
+
+}
+
+.card {
+	width: 900px;
+	height: 630px;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	margin-left: 250px;
+	border: 1px solid lightgray;
+	background: snow;
+}
+
+.card .card-image .card-title {
+	color: 	#FFD700;
+	font-family: 'Bowlby One SC', cursive;
+	font-family: 'Righteous', cursive;
+	font-size: 50px;
+	text-shadow: .2px .2px lightgray;
+}
+
+nav {
+	background-color: teal;
+}
+
+p{
+	text-align: left;
+	color: teal;
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+}
+
+/*.waves-effect {
+	/*float: right;*/
+	/*background: black;
+	margin-bottom: 30px;
+	margin-left: 30px;*/
+
+.row .col.s12 {
+    width: 100%;
+    margin-left: auto;
+    left: auto;
+    right: auto;
+    margin-top: 20px;
+}
+
+#submit {
+	width: 200px;
+}
+
+footer.page-footer {
+	background-color: teal;
+	text-align: center;
+}
+
+hr {
+	color: lightgray
+}
+
+#takeSurvey {
+	background: gray;
+	margin-bottom: 30px;
+	margin-left: 30px;
+}
+
+#submitButton {
+	background-color: gray;	
+	width: 930px;
+	margin-bottom: 30px;
+	margin-left: 10px;
+}
