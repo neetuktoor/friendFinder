@@ -20,10 +20,16 @@ padding-bottom: 10px;
 
 .card .card-image .card-title {
 	color: 	#FFD700;
+	background-color: gray;
 	font-family: 'Bowlby One SC', cursive;
 	font-family: 'Righteous', cursive;
 	font-size: 50px;
 	text-shadow: .2px .2px lightgray;
+	/*text-align: right;*/
+	width: 900px;
+	height: 85px;
+	padding-top: 10px;
+	border-radius: 1px;
 }
 
 nav {
@@ -75,4 +81,8 @@ hr {
 	width: 930px;
 	margin-bottom: 30px;
 	margin-left: 10px;
+}
+
+h4{
+	color: #FFD700;
 }
